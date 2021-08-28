@@ -13,4 +13,4 @@ GO_VERSION=$1
 PRG_VERSION=$(GIT_DIR="mqtt_data_exporter/.git" git describe --tags)
 IMAGE_VERSION=${PRG_VERSION}_${GO_VERSION}
 
-docker buildx build --build-arg "GO_VERSION=${GO_VERSION}" --platform linux/amd64 --platform linux/arm/v7 -t "sfudeus/mqtt_data_exporter:${IMAGE_VERSION}" --push .
+docker buildx build --build-arg "GO_VERSION=${GO_VERSION}" --platform linux/amd64 --platform linux/arm/v7 --platform linux/arm64 -t "sfudeus/mqtt_data_exporter:${IMAGE_VERSION}" --push .
